@@ -14,3 +14,4 @@ VScode : https://code.visualstudio.com/download
 2.open
 ```
 ©xcqL
+![preview img](/preview.png)
