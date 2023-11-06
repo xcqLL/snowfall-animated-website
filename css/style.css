@@ -1,0 +1,81 @@
+/* Resetting margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the snow container */
+.snow-container {
+    background-color: #000; /* background hitam (Karna pake <section> jadi kita ndak butuh .body di css)*/
+    width: 100%; /* Lebar 100% dari viewport */
+    height: 100vh; /* Tinggi 100% dri viewport */
+    position: relative; /* Posisi relatif */
+    overflow: hidden; /* Mengatur overflow ke hidden */
+    display: flex; /* Menggunakan flexbox */
+    align-items: center; /* Posisi item di tengah vertikal */
+    justify-content: center; /* Posisi item di tengah horizontal */
+}
+
+/* Adding a semi-transparent background layer */
+.snow-container::after {
+    content: "";
+    position: absolute; /* Posisi absolut */
+    width: 100%; /* Lebar 100% */
+    height: 100vh; /* Tinggi 100% dari viewport */
+    top: 0; /* Mulai dari bagian atas */
+    left: 0; /* Mulai dari kiri */
+    background-color: #000; /* Latar belakang hitam */
+    opacity: 0.4; /* Tingkat kecerahan 40% */
+    z-index: 1; /* Z-index yang lebih rendah */
+}
+
+/* Styling for the snowflakes */
+.snow {
+    background-color: #fff; /* background salju putih */
+    border-radius: 50%; /* Membuat bntk lingkaran */
+    position: absolute; /* Posisi absolut */
+    animation: snowFall 10s linear; /* Menggnkan animasi snowFall selama 10 detik dgn gerakan linear */
+    z-index: 2; /* Z-index yg lbih tinggi */
+}
+
+
+@keyframes snowFall {
+
+    0% {
+        opacity: 0;
+        top: 0;
+        transform: translateX(5px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+
+    30% {
+
+        transform: translateX(5px);
+    }
+
+    40% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+
+    100% {
+        opacity: 0;
+        top: 100vh;
+    }
+}
